@@ -7,6 +7,9 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
 import { TaskDetailComponent } from './task-details/task-detail/task-detail.component';
 import { TaskDetailListComponent } from './task-details/task-detail-list/task-detail-list.component';
 import { TaskDetailService } from './shared/task-detail.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { TaskDetailService } from './shared/task-detail.service';
   imports: [
     BrowserModule, 
     FormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [TaskDetailService],
   bootstrap: [AppComponent]
