@@ -50,7 +50,7 @@ insertRecord(form: NgForm){
   this.service.PostTask().subscribe(
     res => {
       this.resetForm(form);
-      this.toastr.success('Enviado com sucesso', 'Task Manager Scheduler')
+      this.toastr.success('Enviado com sucesso', 'Task Scheduler Application')
     },
     err => {
       console.log(err);
@@ -61,7 +61,7 @@ updateRecord(form: NgForm){
   this.service.PutTask().subscribe(
     res => {
       this.resetForm(form);
-      this.toastr.info('Atualizado com sucesso', 'Task Manager Scheduler')
+      this.toastr.info('Atualizado com sucesso', 'Task Scheduler Application')
     },
     err => {
       console.log(err);

@@ -17,10 +17,15 @@ export class TaskDetailService {
   PutTask(){
     return this.http.put(this.rootURL + '/Tasks/' + this.formData.id ,this.formData);
   }
+  DeleteTask(id){
+    return this.http.delete(this.rootURL + '/Tasks/' + id);
+  }
 
   refreshList(){
     this.http.get(this.rootURL + '/Tasks')
     .toPromise()
     .then(res => this.list = res as TaskDetail[])
   }
+
+
 }

@@ -3,5 +3,8 @@
 <td (click)="populateForm(tde)">{{tde.titulo}}</td>
 <td (click)="populateForm(tde)">{{tde.status == true? "Ativo" : "Inativo"}}</td>
 <td (click)="populateForm(tde)">{{tde.descricao}}</td>
+<td>
+  <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(tde.id)"></i>
+</td>
   </tr>
 </table>
