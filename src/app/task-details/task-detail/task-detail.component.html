@@ -1,3 +1,37 @@
-<p>
-  task-detail works!
-</p>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+            <i class="far fa-handshake"></i>
+        </div>
+      </div>
+      <input name="Titulo" #Titulo="ngModel" [(ngModel)]="service.Titulo" 
+      class="form-control" placeholder="Título" required maxlength="50">
+    </div>    
+  </div>
+  <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fa-check"></i>
+          </div>
+        </div>
+        <label class="input-group-text bg-white">Ativa</label><input name="Status" type="checkbox" #Status="ngModel" [(ngModel)]="service.Status" class="form-control" value="false">
+      </div>    
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="fas fa-comments"></i>
+            </div>
+          </div>
+          <input name="Descricao" #Descricao="ngModel" [(ngModel)]="service.Descricao" 
+          class="form-control" placeholder="Descrição" required maxlength="200">
+        </div>    
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i> Enviar</button>
+      </div>
+</form>
