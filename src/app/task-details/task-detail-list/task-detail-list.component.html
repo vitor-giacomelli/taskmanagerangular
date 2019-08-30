@@ -1,3 +1,7 @@
-<p>
-  task-detail-list works!
-</p>
+<table class="table table-hover">
+  <tr *ngFor="let tde of service.list">
+<td (click)="populateForm(tde)">{{tde.titulo}}</td>
+<td (click)="populateForm(tde)">{{tde.status == true? "Ativo" : "Inativo"}}</td>
+<td (click)="populateForm(tde)">{{tde.descricao}}</td>
+  </tr>
+</table>

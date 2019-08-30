@@ -8,9 +8,19 @@ import { HttpClient } from "@angular/common/http";
 export class TaskDetailService {
   formData: TaskDetail;
   readonly rootURL = 'https://localhost:44343/api';
+  list : TaskDetail[];
   constructor(private http:HttpClient) { }
 
-  PostTask(formData: TaskDetail){
-    return this.http.post(this.rootURL + '/Tasks',formData);
+  PostTask(){
+    return this.http.post(this.rootURL + '/Tasks',this.formData);
+  }
+  PutTask(){
+    return this.http.put(this.rootURL + '/Tasks/' + this.formData.id ,this.formData);
+  }
+
+  refreshList(){
+    this.http.get(this.rootURL + '/Tasks')
+    .toPromise()
+    .then(res => this.list = res as TaskDetail[])
   }
 }

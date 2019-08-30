@@ -1,4 +1,5 @@
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" [value]="service.formData.id">
   <div class="form-group">
     <div class="input-group">
       <div class="input-group-prepend">
@@ -6,7 +7,7 @@
             <i class="far fa-handshake"></i>
         </div>
       </div>
-      <input name="Titulo" #Titulo="ngModel" [(ngModel)]="service.Titulo" 
+      <input name="Titulo" #Titulo="ngModel" [(ngModel)]="service.formData.titulo" 
       class="form-control" placeholder="Título" required maxlength="50">
     </div>    
   </div>
@@ -17,7 +18,8 @@
               <i class="fas fa-check"></i>
           </div>
         </div>
-        <label class="input-group-text bg-white">Ativa</label><input name="Status" type="checkbox" #Status="ngModel" [(ngModel)]="service.Status" class="form-control" value="false">
+        <label class="input-group-text bg-white">Ativa</label><input name="Status" type="checkbox" 
+        #Status="ngModel" [(ngModel)]="service.formData.status" class="form-control" value="false">
       </div>    
     </div>
     <div class="form-group">
@@ -27,7 +29,7 @@
                 <i class="fas fa-comments"></i>
             </div>
           </div>
-          <input name="Descricao" #Descricao="ngModel" [(ngModel)]="service.Descricao" 
+          <input name="Descricao" #Descricao="ngModel" [(ngModel)]="service.formData.descricao" 
           class="form-control" placeholder="Descrição" required maxlength="200">
         </div>    
       </div>
